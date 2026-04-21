@@ -22,7 +22,7 @@ jobs:
 
       - name: 'Install Unity'
         uses: buildalon/unity-setup@ab626823a2d32033d5a7811169d0ce92e8010d38 # v2.3.0
-        if: contains('Unity', matrix.projects)
+        if: contains(matrix.projects, 'Unity')
         id: unity-setup
         with:
           unity-version: '2019.4.19f1'
