@@ -3,7 +3,7 @@ This repository contains the core libraries that Resonite uses to interact with 
 
 You can get Resonite free on Steam: https://store.steampowered.com/app/2519830/Resonite/
 
-Resonite uses a unique multi-process architecture, where the majority of Resonite is a fully custom engine running with modern .NET 10 runtime. The engine communicates with the Unity Renderer process via IPC (inter process communication) and shared memory - these are the libraries that faciliate that.
+Resonite uses a unique multi-process architecture, where the majority of Resonite is a fully custom engine running with a modern .NET 10 runtime. The engine communicates with the Unity Renderer process via IPC (inter process communication) and shared memory - these are the libraries that facilitate this.
 
 This architecture allows for much higher performance and properly isolates the renderer from the rest of the engine, allowing it to be replaced in the future.
 
@@ -13,9 +13,9 @@ This library contains shared classes and models for the IPC communication that a
 This library is also referenced by FrooxEngine itself - it provides the shared resources between the two.
 
 ## Renderite.Unity
-This library contains Unity specific classes and behaviors that handle most interfacing with the Unity engine to render things.
+This library contains Unity-specific classes and behaviors that handle most interfacing with the Unity engine to render things.
 
-This library is used in the Unity renderer project only and majority of the actual rendering logic is in this library.
+This library is used in the Unity renderer project only, and the majority of the actual rendering logic is in this library.
 
 # Unity Renderer Project
 The Unity side of the renderer that uses these libraries is available here:
