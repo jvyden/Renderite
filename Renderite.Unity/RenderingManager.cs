@@ -1502,7 +1502,10 @@ namespace Renderite.Unity
             bool success;
 
             if (!icon.isOverlay)
-                success = WindowIconTools.SetIcon(iconData, icon.size.x, icon.size.y, WindowIconKind.Big);
+            {
+                success = WindowIconTools.SetIcon(iconData, icon.size.x, icon.size.y, WindowIconKind.Small);
+                success &= WindowIconTools.SetIcon(iconData, icon.size.x, icon.size.y, WindowIconKind.Big);
+            }
             else
                 success = WindowIconTools.SetOverlayIcon(iconData, icon.size.x, icon.size.y, icon.overlayDescription ?? "");
 
