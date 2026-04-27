@@ -182,6 +182,9 @@ namespace Renderite.Unity
                 Debug.Log("Renderite.Unity il2cpp-testing branch by jvyden - report bugs on the discussion!");
             }
             
+            Debug.Log("");
+            Debug.Log("This is a custom renderer and therefore you should not submit bug reports to the official Resonite-Issues tracker!");
+            
             if (Instance != null)
                 throw new InvalidOperationException("Only one RenderingManager can exist");
 
@@ -971,14 +974,14 @@ namespace Renderite.Unity
 
             Debug.Log("UniqueSessionId: " + UniqueSessionId);
 
-            if (!Renderite.Shared.Helper.IsWine)
-            {
-                var wasapi = new CSCore.SoundOut.WasapiOut(false, CSCore.CoreAudioAPI.AudioClientShareMode.Shared, 100, initData.uniqueSessionId, true);
-                var audioFormat = new WaveFormat(wasapi.Device.DeviceFormat.SampleRate, 32, wasapi.Device.DeviceFormat.Channels, AudioEncoding.IeeeFloat);
-                wasapi.Initialize(new SilenceSource(audioFormat));
-
-                Debug.Log($"Initialized dummy WASAPI session");
-            }
+            // if (!Renderite.Shared.Helper.IsWine)
+            // {
+            //     var wasapi = new CSCore.SoundOut.WasapiOut(false, CSCore.CoreAudioAPI.AudioClientShareMode.Shared, 100, initData.uniqueSessionId, true);
+            //     var audioFormat = new WaveFormat(wasapi.Device.DeviceFormat.SampleRate, 32, wasapi.Device.DeviceFormat.Channels, AudioEncoding.IeeeFloat);
+            //     wasapi.Initialize(new SilenceSource(audioFormat));
+            //
+            //     Debug.Log($"Initialized dummy WASAPI session");
+            // }
 
             if (initData.windowTitle != null)
             {
