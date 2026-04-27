@@ -175,6 +175,11 @@ namespace Renderite.Unity
 
         void Awake()
         {
+            for (int i = 0; i < 3; i++)
+            {
+                Debug.Log("Renderite.Unity il2cpp-testing branch by jvyden - report bugs on the discussion!");
+            }
+            
             if (Instance != null)
                 throw new InvalidOperationException("Only one RenderingManager can exist");
 
@@ -1043,7 +1048,7 @@ namespace Renderite.Unity
 
             var result = new RendererInitResult();
 
-            result.rendererIdentifier = $"Renderite.Renderer.Unity {Application.version} ({Application.unityVersion})";
+            result.rendererIdentifier = $"Renderite.Renderer.Unity jvyden/il2cpp-testing {Application.version} ({Application.unityVersion})";
             result.mainWindowHandlePtr = WindowsNativeHelper.MainWindowHandle.ToInt64();
 
             result.actualOutputDevice = initializedDevice;
