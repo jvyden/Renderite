@@ -60,6 +60,8 @@ namespace Renderite.Unity
         {
             get
             {
+                return false;
+
                 if (Renderite.Shared.Helper.IsWine || MainProcess is null)
                     return !Directory.Exists($"/proc/{_mainProcessId}");
                 else
@@ -995,10 +997,10 @@ namespace Renderite.Unity
 
             _mainProcessId = initData.mainProcessId;
 
-            if (!Renderite.Shared.Helper.IsWine)
-                MainProcess = System.Diagnostics.Process.GetProcessById(_mainProcessId);
-
-            Task.Run(MainProcessWatchDog);
+            // if (!Renderite.Shared.Helper.IsWine)
+            //     MainProcess = System.Diagnostics.Process.GetProcessById(_mainProcessId);
+            //
+            // Task.Run(MainProcessWatchDog);
 
             DebugFramePacing = initData.debugFramePacing;
 
